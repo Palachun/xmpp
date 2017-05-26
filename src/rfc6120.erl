@@ -830,6 +830,7 @@ dec_message_type(<<"chat">>) -> chat;
 dec_message_type(<<"groupchat">>) -> groupchat;
 dec_message_type(<<"headline">>) -> headline;
 dec_message_type(<<"error">>) -> error;
+dec_message_type(JuikerType) when is_binary(JuikerType) -> binary_to_atom(JuikerType,utf8);
 dec_message_type(_) -> normal.
 
 dec_version(S) ->
